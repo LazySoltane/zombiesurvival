@@ -710,7 +710,7 @@ GM.RestrictedModels = {
 	"models/player/zelpa/stalker.mdl",
 	"models/player/fatty/fatty.mdl",
 	"models/player/zombie_lacerator2.mdl",
--- Pointshop
+-- Pointshop ,
 	"models/captainbigbutt/vocaloid/miku_carbon.mdl",
 	"models/captainbigbutt/vocaloid/miku_append.mdl",
 	"models/hellinspector/gru/gru_pm.mdl",
