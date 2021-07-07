@@ -1441,14 +1441,16 @@ function GM:DoHonorableMentions(filter)
 
 	for i, tab in pairs(self.CachedHMs) do
 		net.Start("zs_honmention")
-			net.WriteEntity(tab[1])
-			net.WriteUInt(tab[2], 8)
-			net.WriteInt(tab[3], 32)
-		if filter then
-			net.Send(filter)
-		else
+			timer.Simple(5, function()
+				net.WriteEntity(tab[1])
+				net.WriteUInt(tab[2], 8)
+				net.WriteInt(tab[3], 32)
+			if filter then
+				net.Send(filter)
+			else
 			net.Broadcast()
-		end
+			end
+		end)
 	end
 end
 
