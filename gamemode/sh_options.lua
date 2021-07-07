@@ -137,6 +137,7 @@ GM.AmmoResupply = table.ToAssoc({"ar2", "pistol", "smg1", "357", "xbowbolt", "bu
 -- Worth --
 -----------
 --GM:AddStartingItem("accel",				ITEMCAT_GUNS,			110,				"weapon_zs_accelerator")
+GM:AddStartingItem("sling",				ITEMCAT_GUNS,			30,				"weapon_zs_slinger")
 GM:AddStartingItem("pshtr",				ITEMCAT_GUNS,			30,				"weapon_zs_peashooter")
 GM:AddStartingItem("cpist",				ITEMCAT_GUNS,			30,				"weapon_zs_chempistol")
 GM:AddStartingItem("btlax",				ITEMCAT_GUNS,			30,				"weapon_zs_battleaxe")
@@ -145,13 +146,12 @@ GM:AddStartingItem("blstr",				ITEMCAT_GUNS,			30,				"weapon_zs_blaster")
 GM:AddStartingItem("tossr",				ITEMCAT_GUNS,			40,				"weapon_zs_tosser")
 GM:AddStartingItem("stbbr",				ITEMCAT_GUNS,			40,				"weapon_zs_stubber")
 GM:AddStartingItem("crklr",				ITEMCAT_GUNS,			40,				"weapon_zs_crackler")
-GM:AddStartingItem("sling",				ITEMCAT_GUNS,			30,				"weapon_zs_slinger")
 GM:AddStartingItem("z9000",				ITEMCAT_GUNS,			40,				"weapon_zs_z9000")
-GM:AddStartingItem("minelayer",			ITEMCAT_GUNS,			45,				"weapon_zs_minelayer")
+GM:AddStartingItem("minelayer",			ITEMCAT_GUNS,			40,				"weapon_zs_minelayer")
 GM:AddStartingItem("barrage",			ITEMCAT_GUNS,			40,				"weapon_zs_barrage")
 
-GM:AddStartingItem("3scrap",			ITEMCAT_AMMO,			10,				nil,			"3 scrap ammo",					nil,		"ammo_scrap",			function(pl) pl:GiveAmmo(3, "scrap", true) end)
-GM:AddStartingItem("6scrap",			ITEMCAT_AMMO,			20,				nil,			"6 scrap ammo",					nil,		"ammo_scrap",			function(pl) pl:GiveAmmo(6, "scrap", true) end)
+GM:AddStartingItem("3scrap",			ITEMCAT_AMMO,			5,				nil,			"3 scrap ammo",					nil,		"ammo_scrap",			function(pl) pl:GiveAmmo(3, "scrap", true) end)
+GM:AddStartingItem("6scrap",			ITEMCAT_AMMO,			10,				nil,			"6 scrap ammo",					nil,		"ammo_scrap",			function(pl) pl:GiveAmmo(6, "scrap", true) end)
 GM:AddStartingItem("2chcp",				ITEMCAT_AMMO,			10,				nil,			"40 chemical ammo",				nil,		"ammo_chemical",		function(pl) pl:GiveAmmo(40, "chemical", true) end)
 GM:AddStartingItem("3chcp",				ITEMCAT_AMMO,			15,				nil,			"60 chemical ammo",				nil,		"ammo_chemical",		function(pl) pl:GiveAmmo(60, "chemical", true) end)
 GM:AddStartingItem("2pcp",				ITEMCAT_AMMO,			10,				nil,			"40 pistol ammo",				nil,		"ammo_pistol",			function(pl) pl:GiveAmmo(40, "pistol", true) end)
@@ -451,7 +451,7 @@ GM:AddPointShopItem("nail",				ITEMCAT_AMMO,			1,				nil,							"Nail",							"I
 item.IsNail = true
 
 item = 
-GM:AddPointShopItem("nail5x",			ITEMCAT_AMMO,			10,				nil,							"5 Nails",						"It's just 5 nails.",					"ammo_nail",						function(pl) pl:GiveAmmo(5, "GaussEnergy", true) end)
+GM:AddPointShopItem("nail5x",			ITEMCAT_AMMO,			5,				nil,							"5 Nails",						"It's just 5 nails.",					"ammo_nail",						function(pl) pl:GiveAmmo(5, "GaussEnergy", true) end)
 item.NoScrapCraft = true
 item.IsNail = true
 
@@ -714,31 +714,24 @@ GM.RestrictedModels = {
 	"models/player/fatty/fatty.mdl",
 	"models/player/zombie_lacerator2.mdl",
 -- Pointshop
+
 	"models/captainbigbutt/vocaloid/miku_carbon.mdl",
-	"models/captainbigbutt/vocaloid/miku_append.mdl",
-	"models/hellinspector/gru/gru_pm.mdl",
-	"models/halo3/arbiter.mdl",
-	"models/mcmarkviarmor.mdl",
-	"models/player/buffpyro.mdl",
-	"models/player/clone/rex.mdl",
-	"models/johnnycage/mk_cage.mdl",
-	"models/player/obiwan/obiwan_est.mdl",
-	"models/bread/bo2_sealscp_masked.mdl",
-	"models/bread/bo2_sealscp.mdl",
-	"models/player/jesus/jesus.mdl",
-	"models/lskovfoged/dmc4/dante/dante.mdl",
-	"models/papyrusplayer/papyrusplayer.mdl",
-	"models/player/dvl.mdl",
-	"models/grealms/characters/nicookkar/nicookkar.mdl",
-	"models/player/moonmankkk.mdl",
-	"models/player_solaire.mdl",
+	"models/kerosenn/ghostrunner/gr74/playermodel/jack.mdl",
+	"models/player/legoyobama.mdl",
+	"models/captainbigbutt/vocaloid/shadow_miku_append.mdl",
+	"models/captainbigbutt/vocaloid/shadow_miku_append_competitive.mdl",
+	"models/player/tfa_ow_mercy.mdl",
+	"models/kory/re8/lady_dimitrescu.mdl",
+	"models/player/hellinspector/wallace/wallace.mdl",
+	"models/player/lordvipes/h3_spartans_mps",
+	"models/player/northern3d/theglobglogabgalab.mdl"
 }
 
 -- If a person has no player model then use one of these (auto-generated).
 GM.RandomPlayerModels = {}
 for name, mdl in pairs(player_manager.AllValidModels()) do
 	if not table.HasValue(GM.RestrictedModels, string.lower(mdl)) then
-		table.insert(GM.RandomPlayerModels, name)
+		table.insert("models/player/kleiner.mdl", name)
 	end
 end
 
@@ -828,7 +821,7 @@ GM.NoSuicideWave = 1
 GM.WaveZeroLength = 180
 
 -- Time humans have between waves to do stuff without NEW zombies spawning. Any dead zombies will be in spectator (crow) view and any living ones will still be living.
-GM.WaveIntermissionLength = 60
+GM.WaveIntermissionLength = 70
 
 -- Time in seconds between end round and next map.
 GM.EndGameTime = 65
