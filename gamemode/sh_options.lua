@@ -169,8 +169,8 @@ GM:AddStartingItem("xbow1",				ITEMCAT_AMMO,			5,				nil,			"16 crossbow bolts",
 GM:AddStartingItem("xbow2",				ITEMCAT_AMMO,			10,				nil,			"24 crossbow bolts",			nil,		"ammo_bolts",			function(pl) pl:GiveAmmo(24, "XBowBolt", true) end)
 GM:AddStartingItem("4mines",			ITEMCAT_AMMO,			10,				nil,			"6 explosives",					nil,		"ammo_explosive",		function(pl) pl:GiveAmmo(6, "impactmine", true) end)
 GM:AddStartingItem("6mines",			ITEMCAT_AMMO,			15,				nil,			"9 explosives",					nil,		"ammo_explosive",		function(pl) pl:GiveAmmo(9, "impactmine", true) end)
-GM:AddStartingItem("8nails",			ITEMCAT_AMMO,			10,				nil,			"8 nails",						nil, 		"ammo_nail", 			function(pl) pl:GiveAmmo(8, "GaussEnergy", true) end)
-GM:AddStartingItem("12nails",			ITEMCAT_AMMO,			15,				nil,			"12 nails",						nil, 		"ammo_nail", 			function(pl) pl:GiveAmmo(12, "GaussEnergy", true) end)
+GM:AddStartingItem("8nails",			ITEMCAT_AMMO,			5,				nil,			"8 nails",						nil, 		"ammo_nail", 			function(pl) pl:GiveAmmo(8, "GaussEnergy", true) end)
+GM:AddStartingItem("12nails",			ITEMCAT_AMMO,			10,				nil,			"12 nails",						nil, 		"ammo_nail", 			function(pl) pl:GiveAmmo(12, "GaussEnergy", true) end)
 GM:AddStartingItem("60mkit",			ITEMCAT_AMMO,			15,				nil,			"60 medical power",				nil,		"ammo_medpower",		function(pl) pl:GiveAmmo(60, "Battery", true) end)
 GM:AddStartingItem("90mkit",			ITEMCAT_AMMO,			20,				nil,			"90 medical power",				nil,		"ammo_medpower",		function(pl) pl:GiveAmmo(90, "Battery", true) end)
 
@@ -449,7 +449,7 @@ GM:AddPointShopItem("nail",				ITEMCAT_AMMO,			1,				nil,							"Nail",							"I
 item.IsNail = true
 
 item = 
-GM:AddPointShopItem("nail5x",			ITEMCAT_AMMO,			10,				nil,							"5 Nails",						"It's just 5 nails.",					"ammo_nail",						function(pl) pl:GiveAmmo(5, "GaussEnergy", true) end)
+GM:AddPointShopItem("nail5x",			ITEMCAT_AMMO,			5,				nil,							"5 Nails",						"It's just 5 nails.",					"ammo_nail",						function(pl) pl:GiveAmmo(5, "GaussEnergy", true) end)
 item.NoScrapCraft = true
 item.IsNail = true
 
