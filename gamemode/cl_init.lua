@@ -1287,10 +1287,10 @@ function surface.CreateLegacyFont(font, size, weight, antialias, additive, name,
 end
 
 -- local fontfamily = "Ghoulish Fright AOE"
-local fontfamily = "Pangolin"
+local fontfamily = "typenoksidi"
 local fontfamilysm = "Remington Noiseless"
 local fontfamily3d = "hidden"
-local fontsizeadd = 8
+local fontsizeadd = 10
 local fontweight = 0
 
 function GM:Create3DFonts()
