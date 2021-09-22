@@ -230,6 +230,8 @@ function GM:AddResources()
 	resource.AddFile("resource/fonts/hidden.ttf")
 	resource.AddFile("resource/fonts/pangolin.ttf")
 	resource.AddFile("resource/fonts/remingtonnoiseless.ttf")
+	resource.AddFile("resource/fonts/DK Umbilical Noose.ttf")
+	resource.AddFile("resource/fonts/Undead.ttf")
 end
 
 function GM:Initialize()
@@ -1454,7 +1456,7 @@ end
 
 function GM:DoHonorableMentions(filter)
 	self:CacheHonorableMentions()
-	timer.Simple(10, function()
+	timer.Simple(5, function()
 
 	for i, tab in pairs(self.CachedHMs) do
 		net.Start("zs_honmention")

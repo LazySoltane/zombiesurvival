@@ -1286,16 +1286,18 @@ function surface.CreateLegacyFont(font, size, weight, antialias, additive, name,
 	surface.CreateFont(name, {font = font, size = size, weight = weight, antialias = antialias, additive = additive, shadow = shadow, outline = outline, blursize = blursize})
 end
 
--- local fontfamily = "Ghoulish Fright AOE"
-local fontfamily = "typenoksidi"
+
+-- local fontfamily = "typenoksidi"
+-- local fontfamily = "Undead"
+local fontfamily = "DK Umbilical Noose"
 local fontfamilysm = "Remington Noiseless"
 local fontfamily3d = "hidden"
-local fontsizeadd = 10
+local fontsizeadd = 0
 local fontweight = 0
 
 function GM:Create3DFonts()
-	local fontsizeadd3D = 0
-	local fontweight3D = 0
+	local fontsizeadd3D = 2
+	local fontweight3D = 2
 
 	surface.CreateLegacyFont(fontfamily3d, 28 + fontsizeadd3D, fontweight3D, false, false,  "ZS3D2DFontSmaller", false, true)
 	surface.CreateLegacyFont(fontfamily3d, 48 + fontsizeadd3D, fontweight3D, false, false,  "ZS3D2DFontSmall", false, true)
